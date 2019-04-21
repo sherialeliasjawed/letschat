@@ -42,6 +42,19 @@ class App extends Component {
     this.createRoom = createRoom.bind(this);
   }
 
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+
+  componentDidUpdate() {
+    console.log(this.el);
+    this.scrollToBottom();
+  }
+
+  scrollToBottom() {
+    this.el.scrollIntoView({ behavior: 'smooth' });
+  }
+
   render() {
     const {
       userId,
@@ -97,9 +110,16 @@ class App extends Component {
               </h3>
             ) : null}
           </header>
-          <ul className="chat-messages">
-            <ChatSession messages={messages} />
-          </ul>
+          <div className="messages-container">
+            <ul className="chat-messages">
+              <ChatSession messages={messages} />
+              <div
+                ref={el => {
+                  this.el = el;
+                }}
+              />
+            </ul>
+          </div>
           <footer className="chat-footer">
             <MessageForm
               newMessage={newMessage}

@@ -6,12 +6,16 @@ const RoomList = props => {
   const roomList = rooms.map(room => {
     // Changing room icon depending on whether it's a public room or a private direct message. Images in public/img
     const roomIcon = !room.isPrivate ? (
-      <img src="/img/square-shape-shadow.svg" alt="Public" class="public-img" />
+      <img
+        src="/img/square-shape-shadow.svg"
+        alt="Public"
+        className="public-img"
+      />
     ) : (
       <img
         src="/img/lock-closed-padlock-silhouette.svg"
         alt="Private"
-        class="private-img"
+        className="private-img"
       />
     );
     const isRoomActive = room.id === currentRoom.id ? 'active' : '';
