@@ -1,7 +1,7 @@
 # LetsChat
 ### Chat application made in React, Node.js and Express using the Chatkit SDK.
 
-### Demo (https://protected-everglades-46563.herokuapp.com/)
+### [Demo](https://protected-everglades-46563.herokuapp.com/)
 
 ## How to use:
 
